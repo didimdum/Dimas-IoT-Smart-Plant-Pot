@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Plant Pot</title>
+    <meta http-equiv="refresh" content="5">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+    <h1>Smart Plant Pot</h1>
+    <div class="value">Soil Moisture: <b>{{ soil }}</b></div>
+    <div class="value">Light (LDR): <b>{{ ldr }}</b></div>
+</div>
+
+</body>
+</html>

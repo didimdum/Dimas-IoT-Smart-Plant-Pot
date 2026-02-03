@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e8f5e9;
+    text-align: center;
+    padding-top: 50px;
+}
+.box {
+    background: white;
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+h1 {
+    color: #2e7d32;
+}
+.value {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.value b {
+    color: #388e3c;
+}
