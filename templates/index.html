@@ -1,16 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Plant Pot</title>
     <meta http-equiv="refresh" content="5">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="box">
-    <h1>Smart Plant Pot</h1>
-    <div class="value">Sensor Tanah/Kelembaban: <b>{{ soil }}</b></div>
-    <div class="value">Sensor Cahaya: <b>{{ ldr }}</b></div>
+<div class="container">
+    <div class="header">
+        <h1>Smart Plant Pot</h1>
+        <p class="subtitle">Monitoring Kesehatan Tanaman Real-time</p>
+    </div>
+
+    <div class="content">
+        <div class="sensor-card soil-card">
+            <div class="sensor-info">
+                <h2>Kelembaban Tanah</h2>
+                <div class="sensor-value">{{ soil }}%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill soil-fill" style="width: {{ soil }}%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sensor-card light-card">
+            <div class="sensor-info">
+                <h2>Intensitas Cahaya</h2>
+                <div class="sensor-value">{{ ldr }}</div>
+                <div class="progress-bar">
+                    <div class="progress-fill light-fill" style="width: {% if ldr > 1023 %}100{% else %}{{ (ldr / 1023 * 100)|int }}{% endif %}%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="last-update">Diperbarui setiap 5 detik</p>
+    </div>
 </div>
 
 </body>
